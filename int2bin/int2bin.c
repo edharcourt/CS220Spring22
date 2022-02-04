@@ -13,7 +13,15 @@ void int2bin(int n) {
 
 void int2bin(int n) {
     // base case
-    // recursive case 
-    // finish on wednesday
+    if (n == 0) {
+        printf("0");
+    }
+    else {
+        int2bin(n/2);
+        printf("%d", n % 2);
+    }
 }
+
+
+
 
