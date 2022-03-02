@@ -21,4 +21,9 @@ int main(void) {
 
    int w = 79;
    printf("%d %d %d\n", w*-1, -w, ~w + 1);
+
+   printf("%x\n", -1);
+
+   int *p;
+   p = &x;
 }

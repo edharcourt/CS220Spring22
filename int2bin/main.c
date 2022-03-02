@@ -14,10 +14,11 @@ int main(void) {
     double z;
 
     printf("int is %d bytes\n", sizeof(i));
+    printf("short is %d bytes\n", sizeof(short));
     printf("char is %d bytes\n", sizeof(j));
     printf("long is %d bytes\n", sizeof(k));
     printf("long long is %d bytes\n", sizeof(x));
     printf("float is %d bytes\n", sizeof(y));
     printf("double is %d bytes\n", sizeof(z));
-
+    printf("%x\n", -1);
 }
