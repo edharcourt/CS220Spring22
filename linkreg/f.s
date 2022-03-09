@@ -1,3 +1,4 @@
+// exam question
 .global f
 .text 
 
