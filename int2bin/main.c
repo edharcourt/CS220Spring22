@@ -3,8 +3,9 @@
 
 int main(void) {
 
-    //int2bin(8190); // should print 0111....1110
+    int2bin(8190); // should print 0111....1110
 
+    /*
     // chapter 3
     int i;   // 32 bits, 4 bytes
     char j;  // 8 bits, byte
@@ -21,4 +22,5 @@ int main(void) {
     printf("float is %d bytes\n", sizeof(y));
     printf("double is %d bytes\n", sizeof(z));
     printf("%x\n", -1);
+    */
 }
