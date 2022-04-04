@@ -1,40 +1,3 @@
-// static variables are stored in global memory
-// local variables note allocated to registers are stored on the stack
-// The read-modify-write operation is a fundamental computer science concept
-//     ldr, modify, str
-
-// ldr, str. The ARM processor is called a load/store archiecture
-// all operations happen in register that are loaded from memory
-// and then stored.
-
-/*
-int simulate(int n) {
-    const int DAYS = 366;
-    int cal[DAYS];
-
-    // a static variable retains its value (and memory)
-    // across function calls
-    static int seedhack = 0;
-    srand(time(NULL) + seedhack++);
-    memset(cal, 0, DAYS*sizeof(int));
-
-    // assign n birthdays
-    int i = 0;
-    while (i < n) {
-        cal[rand() % DAYS]++;
-        i++;
-    }
-
-    i = 0;
-    while (i < DAYS) {
-        if (cal[i] > 1)
-            return 1;
-        i++;
-    }
-
-    return 0;
-}
-*/
 
 .global simulate
 .cpu cortex-a53
@@ -42,17 +5,27 @@ int simulate(int n) {
 
 // a word is the width, in bytes, of the natural size of the machine.
 // 4 bytes
+.align 2
 seedhack: .word 0
-
+.align 2
 .text
+
+mod:
+    sdiv r2, r0, r1
+    mul  r2, r2, r1
+    sub  r0, r0, r2
+    bx lr
+
+
 simulate:
-   push { r4-r8,lr } 
+   push { r4-r10,fp,lr } 
    mov r6, #366
+   lsl r9, r6, #2
    mov r5, r0
 
    // local variable get stored on the stack if you can't put them 
    // in a register
-   sub sp, sp, r6, lsl #2  // shift r1 by two and then subtract
+   sub sp, sp, r9  // shift r1 by two and then subtract
    mov r7, sp // store starting address of array in r2
    ldr r4, =seedhack // put address of seedhack in r4 
 
@@ -70,10 +43,12 @@ simulate:
    // set up call to memset
    mov r0, r7
    mov r1, #0
+   //mov r2, r9
    mov r2, r6, lsl #2
-   
-   // Finish for HW :-)))))
+   bl memset
 
-
-
-
+   mov r10, #0   // <- do we crash here? 
+   // missing crud 
+   add sp, sp, r9 
+   pop {r4-r10,fp,lr}  
+   bx lr
