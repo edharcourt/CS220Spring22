@@ -7,6 +7,7 @@ int randrange(int x, int y) {
 */
 
 .global randrange
+.global mod
 .cpu cortex-a53
 .text
 

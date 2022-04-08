@@ -1,15 +1,5 @@
 #include <stdio.h>
-
-/* 
-void int2bin(int n) {
-
-  while (n > 0) {
-    printf("%d", n % 2);
-    n = n / 2;
-  }
-  printf("\n");
-}
-*/
+#include "int2bin.h"
 
 void int2bin(int n) {
     // base case
@@ -17,11 +7,7 @@ void int2bin(int n) {
         printf("0");
     }
     else {
-        int2bin(n/2);
-        printf("%d", n % 2);
+        int2bin(n >> 1);     // n / 2
+        printf("%d", n & 1); // n % 2
     }
 }
-
-
-
-
