@@ -4,12 +4,25 @@
 // make a type for a bit
 typedef u_int32_t bit_t;
 
+u_int32_t revr(u_int32_t n, u_int32_t r) {
+
+    if (n == 0)
+        return r;
+    else 
+        return revr(n >> 1, (r << 1) | (n & 1));
+}
+
 // reverse the bits in x
-u_int32_t rev(u_int32_t x) {
+u_int32_t rev(u_int32_t n) {
 
-  // study question: use bit operations only. Don't 
-  // convert to string or use an array.
+    u_int32_t m = 0;
 
+    // build up the int in reverse
+    while (n > 0) {
+        m = (m << 1) | (n & 1);
+        n = n >> 1;
+    }
+    return m;
 }
 
 u_int32_t add(u_int32_t x, u_int32_t y) {
