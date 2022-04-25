@@ -1,9 +1,10 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int main(void) {
+int main(int argc, char * argv[]) {
 
-    float x = .09;
+    float x = strtof(argv[1], NULL); 
     int * y = (int *) &x;  // cast
-    printf("%X\n", *y);
+    printf("%f %X\n", x, *y);
 }
 
