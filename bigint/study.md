@@ -3,21 +3,23 @@
 ## bigint.c - _The base ten version_
 1. Modify `print_int` so that it does not print leading zero digits.
 
-2. Write a function `div10` that takes a BigInt and divides it by ten returning the result. Hint: dividing a base ten integer by ten is the same thing as ... ?
+2. Write a function `div10` that takes a `BigInt` object and 
+   divides it by ten returning the result. _Hint: dividing a base 
+   ten integer by ten is the same thing as ... ?_
     - `div10` should not modify the argument passed to it. It should 
-    allocate and return a new `BigInt`.
+       allocate and return a new `BigInt`.
     - `extern BigInt *div10(const BigInt *x);`
 
-3. Write a function `mul10` that takes a `BigInt` and multiplies it by 
-   ten and returns the result. Hint: Multiplying a base ten integer 
-   is the same thing as ... ?
-    - `div10` should not modify the argument passed to it. 
+3. Write a function `mul10` that takes a `BigInt` object and multiplies it by 
+   ten and returns the result. _Hint: Multiplying a base ten integer 
+   is the same thing as ... ?_
+    - `mul10` should not modify the argument passed to it. 
       It should allocate a new `BigInt` object and return it.
     - `extern BigInt *mul10(const BigInt *x);`
 
 4. Write a function `mult` that multiplies two `BigInt` objects. 
-   Hint: This should use a similar algorithm as the one we developed 
-   for multiplying two binary numbers.
+   _Hint: This should use a similar algorithm as the one we developed 
+   for multiplying two binary numbers._
     - Make sure that `mult` does not have a memory leak.
     - `extern BigInt *mult(const BigInt *x, const BigInt *y);`
 
@@ -33,4 +35,4 @@
 
 ## Base conversion on `BigInt` objects
 
-Depending on how far we get this week, this section is a placeholder for some questions on converting big integers between bases.
+_Depending on how far we get this week, this section is a placeholder for some questions on converting big integers between bases._
