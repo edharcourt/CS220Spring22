@@ -25,10 +25,12 @@
       It should allocate a new `BigInt` object and return it.
     - `extern BigInt *mul10(const BigInt *x);`
 
-4.Write a function `mult` that multiplies two `BigInt`s. Hint: This should use a similar algorithm as the one we developed for multiplying two binary numbers.
+4. Write a function `mult` that multiplies two `BigInt` objects. 
+   Hint: This should use a similar algorithm as the one we developed 
+   for multiplying two binary numbers.
     - Make sure that `mult` does not have a memory leak.
     - `extern BigInt *mult(const BigInt *x, const BigInt *y);`
 
-## Base conversion on `BigInt`s
+## Base conversion on `BigInt` objects
 
 Depending on how far we get this week, this section is a placeholder for some questions on converting big integers between bases.
