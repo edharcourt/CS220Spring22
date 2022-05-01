@@ -1,6 +1,6 @@
 # `BigInt` Study Questions
 
-## bigint.c - _The base ten version_
+## `bigint.c` - _The base ten version_
 1. Modify `print_int` so that it does not print leading zero digits.
 
 2. Write a function `div10` that takes a `BigInt` object and 
@@ -12,7 +12,7 @@
 
 3. Write a function `mul10` that takes a `BigInt` object and multiplies it by 
    ten and returns the result. _Hint: Multiplying a base ten integer 
-   is the same thing as ... ?_
+   by ten is the same thing as ... ?_
     - `mul10` should not modify the argument passed to it. 
       It should allocate a new `BigInt` object and return it.
     - `extern BigInt *mul10(const BigInt *x);`
@@ -32,6 +32,12 @@
     - add tests to `main.c` to make sure both of the above functions work.
 3. In `bigint2.c` Write a function `add` that takes two `BigInt` objects 
     and adds them. That is, implement the `add` function in `bigint.h`
+
+## Testing and Quality Assurance (QA) 
+ - Thoroughly test all of your functions on a variety of inputs. 
+ - Convince yourself that none of your functions contain a memory leak.
+ - Add all of the new functions to the header file and give them
+   appropriate comments.
 
 ## Base conversion on `BigInt` objects
 
