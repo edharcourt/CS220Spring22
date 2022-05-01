@@ -49,7 +49,7 @@ not going to provide solutions to these.
 
 ## Testing and Quality Assurance (QA) 
  1. Thoroughly test all of your functions on a variety of inputs. 
-    Think of the crer cases.
+    Think of the corner cases.
         - For example, what if I called `div10` on zero?
  2. Convince yourself that none of your functions contain a memory leak.
  3. Add all of the new functions to the header file and give them
