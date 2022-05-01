@@ -1,4 +1,4 @@
-# BigInt Study Questions
+# `BigInt` Study Questions
 
 ## bigint.c - _The base ten version_
 1. Modify `print_int` so that it does not print leading zero digits.
