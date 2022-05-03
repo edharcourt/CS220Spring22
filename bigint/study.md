@@ -57,4 +57,8 @@ not going to provide solutions to these.
 
 ## Base conversion on `BigInt` objects
 
-_Depending on how far we get this week, this section is a placeholder for some questions on converting big integers between bases._
+ 1. Create a version of `bigint2bin.py` that converts a base ten
+    integer (represented as a string og digits) to hexadecima.
+    Name the file `bigint2hex.py`
+
+ 2. Create the corresponding C version `bigint2hex.c`
