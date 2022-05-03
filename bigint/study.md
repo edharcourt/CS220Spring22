@@ -15,7 +15,7 @@ not going to provide solutions to these.
     - Variation: What if I were to ask you to write a version of
       this function that does not allocate additional memory 
       (that is, does not call `malloc`) but modifies
-      argument passed to it. How would the code change? Analyze the memory
+      the argument passed to it. How would the code change? Analyze the memory
       usage of this variation. Hint: What if we called `div10` one 
       thousand times on a `BigInt` of five thousand digits.
 
@@ -28,8 +28,8 @@ not going to provide solutions to these.
     - Variation: What if I were to ask you to write a version of
       this function that does not allocate additional memory 
       (that is, does not call `malloc`) but modifies
-      argument passed to it. Is this even possible? How would the code change?
-      What if you could call `malloc`.
+      the argument passed to it. Is this even possible? 
+      How would the code change?  What if you could call `malloc`.
 
 4. Write a function `mult` that multiplies two `BigInt` objects. 
    _Hint: This should use a similar algorithm as the one we developed 
@@ -51,6 +51,8 @@ not going to provide solutions to these.
  1. Thoroughly test all of your functions on a variety of inputs. 
     Think of the corner cases.
         - For example, what if I called `div10` on zero?
+        - What should happen if we called `print_int` on zero.
+          We should probably print a leading zero in this case.
  2. Convince yourself that none of your functions contain a memory leak.
  3. Add all of the new functions to the header file and give them
    appropriate comments.
@@ -58,7 +60,7 @@ not going to provide solutions to these.
 ## Base conversion on `BigInt` objects
 
  1. Create a version of `bigint2bin.py` that converts a base ten
-    integer (represented as a string og digits) to hexadecima.
+    integer (represented as a string of digits) to hexadecimal.
     Name the file `bigint2hex.py`
 
  2. Create the corresponding C version `bigint2hex.c`
