@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 /*
 def div2(s: str) -> Tuple[str, int, bool]:
@@ -24,7 +27,7 @@ def div2(s: str) -> Tuple[str, int, bool]:
     return (q,r,z)
 */
 
-typedef byte unsigned char;
+typedef unsigned char byte;
 
 byte div2(char *s, char *q, int *z) {
 
@@ -40,11 +43,22 @@ byte div2(char *s, char *q, int *z) {
         *q++ = p + '0';
 
         if (i < strlen(s) - 1)
-            r = (r - 2*p)*10 + (s[i+1] - '0')
+            r = (r - 2*p)*10 + (s[i+1] - '0');
     }
     r = r - 2*p;
     *q = 0;  // null terminate q
+    return r;
 } 
+
+char *reverse(char *s) {
+    int n = strlen(s);
+    for (int i = 0; i < n/2; i++) {
+        char tmp = s[i];
+        s[i] = s[n - i - 1];
+        s[n - i - 1] = tmp;
+    }
+    return s;
+}
 
 /* 
 def dec2bin(q: str) -> str:
@@ -62,16 +76,29 @@ def dec2bin(q: str) -> str:
     return '0b' + digs
 */
 
+// write reverse 
+// reverse a string in place (don't make a copy)
+
+
 char *dec2bin(char *s) {
     char *digs = malloc(4*strlen(s) + 1);
+    char *beg_digs = digs;  // keep a pointer to the start of the string
+    
     char q[strlen(s) + 1];
     int z = 0;
 
     while (1) {
         byte r = div2(s, q, &z);
-        
+        strcpy(s, q);
+        *digs++ = r + '0';        
+        if (z) break;        
     }
-
+    *digs = 0;  // null terminate
+    //return reverse(digs);
+    return reverse(beg_digs);
 }
 
+int main(int argc, char *argv[]) {
+    printf("%s\n", dec2bin(argv[1]));
+}
 
