@@ -9,4 +9,6 @@ int main(int argc, char *argv[]) {
      printf("%d\n", factor(77) == 7);
      printf("%d\n", factor(13) == 13);
      printf("%d\n", factor(54655093) == 7151);
+     printf("%d\n", is_prime(54655093) == 0);
+     printf("%d\n", is_prime(7151) == 1);
 }
